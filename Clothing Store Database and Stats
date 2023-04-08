@@ -1,0 +1,27 @@
+--Create a clothing store database
+
+CREATE TABLE clothing (id INTEGER PRIMARY KEY, item TEXT, inventory INTEGER, color TEXT, price INTEGER, sizes TEXT);
+INSERT INTO clothing VALUES (1, "long sleeve shirts", 5, "black", 30, "S, M, L");
+INSERT INTO clothing VALUES (2, "sweaters", 6, "pink", 34, "S, M, L");
+INSERT INTO clothing VALUES (3, "jackets", 3, "khaki", 40, "S, M, L, XL");
+INSERT INTO clothing VALUES (4, "pants", 8, "olive", 32, "S, M, L, XL");
+INSERT INTO clothing VALUES (5, "jeans", 4, "light blue", 42, "M, L");
+INSERT INTO clothing VALUES (6, "skirts", 3, "white", 38, "L");
+INSERT INTO clothing VALUES (7, "shorts", 6, "black", 30, "S, M, L");
+INSERT INTO clothing VALUES (8, "dresses", 8, "red", 40, "S, M, L, XL");
+INSERT INTO clothing VALUES (9, "short sleeve shirts", 5, "white", 28, "S, M , L");
+INSERT INTO clothing VALUES (10, "sets", 10, "blue", 48, "S, M, L, XL");
+INSERT INTO clothing VALUES (11, "sweatshirts", 7, "gray", 44, "S, M, XL");
+INSERT INTO clothing VALUES (12, "pajamas", 2, "navy", 38, "S, M");
+INSERT INTO clothing VALUES (13, "jumpsuits", 8, "khaki", 42, "S, M, L, XL");
+INSERT INTO clothing VALUES (14, "rompers", 3, "denim", 36, "M,L");
+INSERT INTO clothing VALUES (15, "t-shirts", 1, "white", 26, "S");
+
+--display the database ordered by price.
+SELECT * FROM clothing ORDER BY price;
+
+--what is the total inventory value?
+SELECT SUM(price) FROM clothing;
+
+--what is the average cost of inventory?
+SELECT AVG(price) FROM clothing;
