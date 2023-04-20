@@ -1,0 +1,62 @@
+CREATE TABLE tv_actresses (
+id INTEGER PRIMARY KEY, 
+name TEXT, 
+hometown TEXT, 
+age INTEGER);
+
+INSERT INTO tv_actresses (id, name, hometown, age) VALUES (1, "Tia Mowry", "West Germany", 44);
+INSERT INTO tv_actresses (id, name, hometown, age) VALUES (2, "Brandy Norwood", "McComb, Ms", 44);
+INSERT INTO tv_actresses (id, name, hometown, age) VALUES (3, "Tracee Ellis Ross", "Los Angeles, Ca.", 50);
+INSERT INTO tv_actresses (id, name, hometown, age) VALUES (4, "Karyn Parsons", "Los Angeles, Ca.", 56);
+INSERT INTO tv_actresses (id, name, hometown, age) VALUES (5, "Phylicia Rashad", "Houston, Tx.", 74);
+
+CREATE TABLE shows 
+(id INTEGER PRIMARY KEY AUTOINCREMENT,
+actress_id INTEGER,
+title TEXT,
+role TEXT, 
+years INTEGER);
+
+INSERT INTO shows (actress_id, title, role, years) 
+VALUES (1, "Sister Sister", "Tia", 1994-1999);
+INSERT INTO shows (actress_id, title, role, years) 
+VALUES (1, "The Game", "Melanie", 2006-2015);
+INSERT INTO shows (actress_id, title, role, years) 
+VALUES (1, "Family Reunion", "Cocoa", 2019-2022);
+INSERT INTO shows (actress_id, title, role, years) 
+VALUES (2, "Moesha", "Moesha", 1996-2001);
+INSERT INTO shows (actress_id, title, role, years) 
+VALUES (2, "The Game", "Chardonnay", 2012-2015);
+INSERT INTO shows (actress_id, title, role, years) 
+VALUES (3, "Girlfriends", "Joan Clayton", 2000-2008);
+INSERT INTO shows (actress_id, title, role, years) 
+VALUES (3, "black-ish", "Rainbow Johnson", 2014-2022);
+INSERT INTO shows (actress_id, title, role, years) 
+VALUES (3, "mixed-ish", "Rainbow Johnson", 2019-2021);
+INSERT INTO shows (actress_id, title, role, years) 
+VALUES (4, "Fresh Prince of Bel-air", "Hilary Banks", 1990-1996);
+INSERT INTO shows (actress_id, title, role, years) 
+VALUES (5, "The Cosby Show", "Claire Huxtable", 1984-1992);
+
+
+--Which show was each actress apart of?
+
+SELECT name, title FROM tv_actresses
+    JOIN shows
+    ON tv_actresses.id = actress_id;
+    
+--What role(s) did each actress play?
+    
+SELECT name, role FROM tv_actresses
+    JOIN shows
+    ON tv_actresses.id = actress_id
+    
+    
+
+
+
+
+
+
+
+
