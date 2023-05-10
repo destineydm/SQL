@@ -1,0 +1,29 @@
+In this SQL, I'm querying a database with multiple tables to answer questions about the data.
+
+#1. Which Customers (their full names, customer ID, and country) who are not in the US?
+
+SELECT CustomerId, FirstName, LastName, Country 
+FROM chinook.customers
+WHERE country <> 'USA';
+
+#2. Show only the Customers from Brazil.
+
+SELECT *
+FROM chinook.customers
+WHERE country ='Brazil';
+
+#3. Find the Invoices of customers who are from Brazil including the customer's full name, Invoice ID, Date of the invoice, and billing country.
+
+SELECT i.InvoiceId, c.FirstName, c.LastName, i.InvoiceDate, i.BillingCountry 
+FROM chinook.invoices i
+JOIN chinook.customers c
+ON i.customerid = c.customerid;
+
+#4. Which Employees are Sales Agents?
+
+SELECT * FROM chinook.employees
+WHERE title= 'Sales Support Agent';
+
+#5. Find a unique/distinct list of billing countries from the Invoice table.
+
+SELECT DISTINCT BillingCountry FROM chinook.Invoices;
